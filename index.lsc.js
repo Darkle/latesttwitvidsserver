@@ -1,9 +1,8 @@
 global.isProduction = process.env.NODE_ENV === 'production'
 
-require('dotenv').config()
+path = require('path')
 
-console.log('=================index process.env======================')
-console.log(process.env)
+require('dotenv').config({path: path.join(__dirname, '.env')})
 
 feedparser = require('feedparser-promised')
 pMap = require('p-map')

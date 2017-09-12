@@ -74,25 +74,24 @@ module.exports = require("lodash");
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(__dirname) {
 
 global.isProduction = process.env.NODE_ENV === 'production';
 
-__webpack_require__(2).config();
+const path = __webpack_require__(2);
 
-console.log('=================index process.env======================');
-console.log(process.env);
+__webpack_require__(3).config({ path: path.join(__dirname, '.env') });
 
-const feedparser = __webpack_require__(3);
-const pMap = __webpack_require__(4);
+const feedparser = __webpack_require__(4);
+const pMap = __webpack_require__(5);
 const _ = __webpack_require__(0);
-const RSS = __webpack_require__(5);
-const AWS = __webpack_require__(6);
-const ms = __webpack_require__(7);
-const Promise = __webpack_require__(8);
+const RSS = __webpack_require__(6);
+const AWS = __webpack_require__(7);
+const ms = __webpack_require__(8);
+const Promise = __webpack_require__(9);
 
-const { getPageJsCodeAsString } = __webpack_require__(9);
-const { logger } = __webpack_require__(10);
+const { getPageJsCodeAsString } = __webpack_require__(10);
+const { logger } = __webpack_require__(11);
 
 const s3 = new AWS.S3({
   accessKeyId: process.env.twitServAccessKeyId,
@@ -198,51 +197,58 @@ function init() {
 }
 
 init();
+/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("dotenv");
+module.exports = require("path");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("feedparser-promised");
+module.exports = require("dotenv");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("p-map");
+module.exports = require("feedparser-promised");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("rss");
+module.exports = require("p-map");
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = require("aws-sdk");
+module.exports = require("rss");
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("ms");
+module.exports = require("aws-sdk");
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("bluebird");
+module.exports = require("ms");
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("bluebird");
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -295,14 +301,14 @@ module.exports = {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const winston = __webpack_require__(11);
-const RollbarTransport = __webpack_require__(12).default;
+const winston = __webpack_require__(12);
+const RollbarTransport = __webpack_require__(13).default;
 
 /*****
 * We are using winston for logging as there is no way to log to the console in dev without logging
@@ -315,8 +321,7 @@ const RollbarTransport = __webpack_require__(12).default;
 * Important note about error logging with winston-rollbar-transport:
 * https://github.com/binded/winston-rollbar-transport#error-handling
 */
-console.log('=================logger process.env======================');
-console.log(process.env);
+
 const transports = [new winston.transports.Console({
   handleExceptions: true,
   humanReadableUnhandledException: true,
@@ -353,13 +358,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = require("winston");
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = require("winston-rollbar-transport");
