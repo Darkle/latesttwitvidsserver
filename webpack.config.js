@@ -5,13 +5,24 @@ const nodeExternals = require('webpack-node-externals')
 const appDir = path.resolve(__dirname)
 
 /*****
-* We dont want webpack to transpile the built in node modules so we use target: 'node'
-* We dont want webpack to transpile the stuff in node_modules folder, so we use the
-* webpack-node-externals plugin
+* We dont want webpack to transpile the built in node modules so we use target: 'node'.
+* We also need to tell it not include polyfills or mocks for various node stuff, which we set with 
+* the 'node' key http://webpack.github.io/docs/configuration.html#node
+* We also dont want webpack to transpile the stuff in node_modules folder, so we use the
+* webpack-node-externals plugin.
 */
 
 const webpackOptions = {
-  target: 'node', // in order to ignore built-in modules like path, fs, etc.
+  target: 'node',
+  node: {
+    console: false,
+    global: false,
+    process: false,
+    Buffer: false,
+    __filename: false,
+    __dirname: false,
+    setImmediate: false
+  },
   entry: './index.lsc.js',
   output: {
     filename: 'index-compiled.js',
@@ -33,7 +44,7 @@ const webpackOptions = {
       }
     ]
   },
-  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
+  externals: [nodeExternals()],
 }
 
 if(process.env.NODE_ENV === 'development' && process.env.nodeDebug === 'true'){

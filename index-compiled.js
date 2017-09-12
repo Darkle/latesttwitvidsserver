@@ -74,7 +74,7 @@ module.exports = require("lodash");
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(__dirname) {
+
 
 global.isProduction = process.env.NODE_ENV === 'production';
 
@@ -197,7 +197,6 @@ function init() {
 }
 
 init();
-/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ }),
 /* 2 */
