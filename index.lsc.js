@@ -2,6 +2,9 @@ global.isProduction = process.env.NODE_ENV === 'production'
 
 require('dotenv').config()
 
+console.log('=================index process.env======================')
+console.log(process.env)
+
 feedparser = require('feedparser-promised')
 pMap = require('p-map')
 _ = require('lodash')

@@ -80,6 +80,9 @@ global.isProduction = process.env.NODE_ENV === 'production';
 
 __webpack_require__(2).config();
 
+console.log('=================index process.env======================');
+console.log(process.env);
+
 const feedparser = __webpack_require__(3);
 const pMap = __webpack_require__(4);
 const _ = __webpack_require__(0);
@@ -312,7 +315,8 @@ const RollbarTransport = __webpack_require__(12).default;
 * Important note about error logging with winston-rollbar-transport:
 * https://github.com/binded/winston-rollbar-transport#error-handling
 */
-
+console.log('=================logger process.env======================');
+console.log(process.env);
 const transports = [new winston.transports.Console({
   handleExceptions: true,
   humanReadableUnhandledException: true,

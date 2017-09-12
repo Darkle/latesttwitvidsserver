@@ -12,7 +12,8 @@ RollbarTransport = require('winston-rollbar-transport').default
 * Important note about error logging with winston-rollbar-transport:
 * https://github.com/binded/winston-rollbar-transport#error-handling
 */
-
+console.log('=================logger process.env======================')
+console.log(process.env)
 transports = [
   new winston.transports.Console({
     handleExceptions: true,
