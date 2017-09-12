@@ -91,8 +91,6 @@ const Promise = __webpack_require__(8);
 const { getPageJsCodeAsString } = __webpack_require__(9);
 const { logger } = __webpack_require__(10);
 
-console.log(process.env);
-
 const s3 = new AWS.S3({
   accessKeyId: process.env.twitServAccessKeyId,
   secretAccessKey: process.env.twitServSecretAccessKey,

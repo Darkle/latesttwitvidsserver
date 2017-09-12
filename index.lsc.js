@@ -13,8 +13,6 @@ Promise = require('bluebird')
 { getPageJsCodeAsString } = require('./pageJs.lsc.js')
 { logger } = require('./logger.lsc.js')
 
-console.log(process.env)
-
 s3 = new AWS.S3({
   accessKeyId: process.env.twitServAccessKeyId,
   secretAccessKey: process.env.twitServSecretAccessKey,
