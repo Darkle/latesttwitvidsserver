@@ -1,0 +1,135 @@
+{
+  "parser": "lightscript-eslint",
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+  },
+  "rules": {
+    "callback-return": "error",
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "comma-dangle": ["error", "never"],
+    "getter-return": "error",
+    "handle-callback-err": "error",
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "no-buffer-constructor": "error",
+    "no-caller": "error",
+    "no-console": 0,
+    "no-duplicate-imports": "error",
+    "no-else-return": "error",
+    "no-empty-function": "error",
+    "no-eq-null": "error",
+    "no-eval": "error",
+    "no-extend-native": "error",
+    "no-extra-bind": "error",
+    "no-floating-decimal": "error",
+    "no-implied-eval": "error",
+    "no-invalid-this": "error",
+    "no-iterator": "error",
+    "no-label-var": "error",
+    "no-labels": "error",
+    "no-loop-func": "error",
+    "no-mixed-requires": [
+      "error",
+      {
+        "allowCall": true,
+        "grouping": true
+      }
+    ],
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+    "no-multi-str": "error",
+    "no-native-reassign": [
+      "error",
+      {
+        "exceptions": [
+          "Promise"
+        ]
+      }
+    ],
+    "no-nested-ternary": "error",
+    "no-new": "error",
+    "no-new-func": "error",
+    "no-new-require": "error",
+    "no-new-symbol": "error",
+    "no-new-wrappers": "error",
+    "no-octal-escape": "error",
+    "no-param-reassign": "error",
+    "no-path-concat": "error",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-process-exit": "error",
+    "no-proto": "error",
+    "no-restricted-syntax": [
+      "error",
+      "ForStatement",
+      "ForInStatement",
+      "ForOfStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-script-url": "error",
+    "no-self-compare": "error",
+    "no-sequences": "error",
+    "no-shadow": "error",
+    "no-shadow-restricted-names": "error",
+    "no-spaced-func": "error",
+    "no-this-before-super": "error",
+    "no-throw-literal": "error",
+    "no-undef-init": "error",
+    "no-undefined": "error",
+    "no-unexpected-multiline": "error",
+    "no-unneeded-ternary": "error",
+    "no-useless-call": "error",
+    "no-useless-concat": "error",
+    "no-useless-constructor": "error",
+    "no-whitespace-before-property": "error",
+    "no-with": "error",
+    "object-shorthand": "error",
+    "prefer-promise-reject-errors": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "require-yield": "error",
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react/require-render-return": 0,
+    "semi": ["error", "never"],
+    "vars-on-top": "error",
+    "wrap-iife": [
+      "error",
+      "any"
+    ]
+  }
+}
