@@ -1,8 +1,6 @@
 winston = require('winston')
 RollbarTransport = require('winston-rollbar-transport').default
 
-{ rollbarAccessToken } = require('./config.json')
-
 /*****
 * We are using winston for logging as there is no way to log to the console in dev without logging
 * to rollbar online as well when using the rollbar npm module on its own.
@@ -23,7 +21,7 @@ transports = [
     level: global.isProduction ? 'info' : 'debug'
   }),
   new RollbarTransport({
-    rollbarAccessToken,
+    rollbarAccessToken: process.env.rollbarAccessToken,
     rollbarConfig: {
       captureUncaught: true,
       captureUnhandledRejections: true,

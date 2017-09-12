@@ -1,5 +1,7 @@
 global.isProduction = process.env.NODE_ENV === 'production'
 
+require('dotenv').config()
+
 feedparser = require('feedparser-promised')
 pMap = require('p-map')
 _ = require('lodash')
@@ -9,13 +11,14 @@ ms = require('ms')
 Promise = require('bluebird')
 
 { getPageJsCodeAsString } = require('./pageJs.lsc.js')
-{ twitServAccessKeyId, twitServSecretAccessKey, region } = require('./config.json')
 { logger } = require('./logger.lsc.js')
 
+console.log(process.env)
+
 s3 = new AWS.S3({
-  accessKeyId: twitServAccessKeyId,
-  secretAccessKey: twitServSecretAccessKey,
-  region
+  accessKeyId: process.env.twitServAccessKeyId,
+  secretAccessKey: process.env.twitServSecretAccessKey,
+  region: process.env.region
 })
 
 twitYTChannelFeeds = [
