@@ -10,7 +10,9 @@
     "buildProd": "cross-env NODE_ENV=production webpack",
     "startNodeDev": "cross-env NODE_ENV=development node ./index-compiled.js",
     "debugNodeDev": "cross-env NODE_ENV=development nodeDebug=true node --inspect ./index-compiled.js",
-    "start": "cross-env NODE_ENV=production node ./index-compiled.js"
+    "start": "cross-env NODE_ENV=production node ./index-compiled.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,8 @@
     "p-map": "^1.1.1",
     "rss": "^1.2.2",
     "winston": "^2.3.1",
-    "winston-rollbar-transport": "^1.0.0"
-  }
+    "winston-rollbar-transport": "^1.0.0",
+    "snyk": "^1.41.1"
+  },
+  "snyk": true
 }
